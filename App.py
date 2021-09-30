@@ -19,6 +19,8 @@ class App:
         self.timer = Timer(self)
         self.state = STARTING
 
+        self.run()
+
 
     def run(self):
         while self.keepGoing:
@@ -49,3 +51,5 @@ class App:
     def safe(self):
         print ("safe")
         self.state = STOPPED
+
+App()
