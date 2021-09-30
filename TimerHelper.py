@@ -19,4 +19,4 @@ class TimerHelper:
             return False
 
     def getTime(self):
-        return round(time.time*1000)
+        return round(time.time()*1000)
