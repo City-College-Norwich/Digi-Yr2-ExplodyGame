@@ -16,7 +16,7 @@ class App:
     def __init__(self):
         self.currentGame = StartingGame(self)
         self.timer = Timer(self)
-        self.state = STARTING
+        self.state = RUNNING
 
         self.run()
 
