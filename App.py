@@ -9,8 +9,6 @@ class App:
     currentGame = None
     totalTime = 300
     state = STOPPED
-    tasks = []
-    tasksLeft = 0
     strikes = 0
 
     def __init__(self):
@@ -25,21 +23,11 @@ class App:
         self.timer.start()
         while self.keepGoing:
             # check modules
-            #self.currentGame.update()
+            self.currentGame.update()
             self.timer.update()
-            
-            self.timer.update()
-            for task in self.tasks:
-                task.update()
-
-            if self.state == RUNNING:
-               #if self.tasksLeft <= 0:
-               #     self.safe()
-
-                if self.strikes >= 3:
-                    self.explode()
 
             # draw
+            self.currentGame.draw()
             self.timer.draw()
 
     def startTimer(self):
