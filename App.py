@@ -22,9 +22,11 @@ class App:
 
 
     def run(self):
+        self.timer.start()
         while self.keepGoing:
             # check modules
-            self.currentGame.update()
+            #self.currentGame.update()
+            self.timer.update()
             
             self.timer.update()
             for task in self.tasks:
