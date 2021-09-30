@@ -33,8 +33,8 @@ class App:
                 task.update()
 
             if self.state == RUNNING:
-                if self.tasksLeft <= 0:
-                    self.safe()
+               #if self.tasksLeft <= 0:
+               #     self.safe()
 
                 if self.strikes >= 3:
                     self.explode()
