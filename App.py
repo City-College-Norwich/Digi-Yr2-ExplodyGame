@@ -1,7 +1,6 @@
 from StartingGame import StartingGame
 from Timer import Timer
 from states import *
-import tkinter as tk
 
 
 class App:
