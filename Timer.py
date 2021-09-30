@@ -3,7 +3,7 @@ from math import floor
 from states import *
 from Adafruit_LED_Backpack import SevenSegment
 
-class TimerDisplay:
+class Timer:
     def __init__(self, parent):
         self.parent = parent
         
