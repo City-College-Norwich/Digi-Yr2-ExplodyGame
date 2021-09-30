@@ -1,11 +1,14 @@
 import time
 from math import floor
 from states import *
+from Adafruit_LED_Backpack import SevenSegment
 
 class TimerDisplay:
     def __init__(self, parent):
         self.parent = parent
-        self.display = None
+        
+        self.display = SevenSegment.SevenSegment(address=0x70)
+        self.display.begin()
 
     def start(self):
         self.endTime = floor(time.time()) + self.parent.totalTime
@@ -26,15 +29,16 @@ class TimerDisplay:
             self.parent.explode()
 
     def setDisplay(self):
-                time = self.getTimeLeftTuple()
+        time = self.getTimeLeftTuple()
 
-        # self.display.set_digit(0, time[0])
-        # self.display.set_digit(1, time[1])
-        # self.display.set_digit(2, time[2])
-        # self.display.set_digit(3, time[3])
-        # self.display.set_colon(int(time[3]%2))
+        self.display.set_digit(0, time[0])
+        self.display.set_digit(1, time[1])
+        self.display.set_digit(2, time[2])
+        self.display.set_digit(3, time[3])
+        self.display.set_colon(int(time[3]%2))
 
-        # self.display.write_display()
+    def draw(self):
+        self.display.write_display()
 
     def getTimeLeft(self):
         return self.endTime - floor(time.time())
