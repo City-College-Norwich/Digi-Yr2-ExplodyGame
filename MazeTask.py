@@ -45,7 +45,7 @@ class MazeTask:
         self.y = 6
 
         serial = spi(port=0, device=1, gpio=noop())
-        self.device = max7219(serial, cascaded=1, rotate=1)
+        self.device = max7219(serial, cascaded=1, rotate=3)
         self.updateScreen = True
         
         self.up = Button(UP_PIN)
