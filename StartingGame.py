@@ -14,7 +14,7 @@ class StartingGame:
         ]
 
         self.timer = TimerHelper()
-        self.timer.set(2000)
+        self.timer.set(200)
         self.changed = False
 
     def update(self):
@@ -23,7 +23,7 @@ class StartingGame:
             return
 
         if not self.changed:
-            self.timer.set(2000)
+            self.timer.set(200)
             print (self.msgs[self.index])
             self.index += 1
             self.changed = True

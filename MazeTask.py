@@ -4,14 +4,13 @@
 # 35 right
 # 22 left
 
-import RPi.GPIO as gpio
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
 from Button import *
 
 UP_PIN = 37
-DOWN_PIN = 27
+DOWN_PIN = 33
 LEFT_PIN = 22
 RIGHT_PIN = 35
 
