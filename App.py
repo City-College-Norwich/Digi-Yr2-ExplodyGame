@@ -31,11 +31,13 @@ class App:
             self.timer.draw()
 
     def registerStrike(self):
+        print ("strike registered")
         self.strikes += 1
         if self.strikes >= 3:
             self.explode()
 
     def startTimer(self):
+        print ("starting timer")
         self.timer.start()
 
     def explode(self):

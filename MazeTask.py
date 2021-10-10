@@ -45,7 +45,7 @@ class MazeTask:
         self.y = 6
 
         serial = spi(port=0, device=1, gpio=noop())
-        self.device = max7219(serial, cascaded=1, rotate=0)
+        self.device = max7219(serial, cascaded=1, rotate=1)
         self.updateScreen = True
         
         self.up = Button(UP_PIN)
@@ -69,7 +69,7 @@ class MazeTask:
                 self.y -= 1
                 self.updateScreen = True
 
-            if direction == DOWN and self.y < 7:
+            elif direction == DOWN and self.y < 7:
                 if self.map[self.y+1][self.x] == 1:
                     self.parent.registerStrike()
                     return
@@ -78,7 +78,7 @@ class MazeTask:
                 self.y += 1
                 self.updateScreen = True
 
-            if direction == LEFT and self.x > 0:
+            elif direction == LEFT and self.x > 0:
                 if self.map[self.y][self.x-1] == 1:
                     self.parent.registerStrike()
                     return
@@ -87,7 +87,7 @@ class MazeTask:
                 self.x -= 1
                 self.updateScreen = True
 
-            if direction == LEFT and self.x < 7:
+            elif direction == RIGHT and self.x < 7:
                 if self.map[self.y][self.x+1] == 1:
                     self.parent.registerStrike()
                     return
