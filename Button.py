@@ -5,7 +5,7 @@ class Button:
     def __init__(self, pin):
         self.pin = pin
 
-        gpio.setmode(gpio.BOARD)
+        gpio.setmode(gpio.BCM)
         gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
 
         self.pressed = False
