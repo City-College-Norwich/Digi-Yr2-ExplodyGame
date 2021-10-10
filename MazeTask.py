@@ -56,10 +56,10 @@ class MazeTask:
 
 
     def update(self):
+        self.updateButtons()
+
         if self.state == RUNNING:
             direction = self.getKeys()
-            if direction != NONE:
-                print (direction)
             if direction == UP and self.y > 0:
                 if self.map[self.y-1][self.x] == 1:
                     self.parent.registerStrike()
@@ -93,7 +93,12 @@ class MazeTask:
                 self.x += 1
                 self.updateScreen = True
 
-            
+    def updateButtons(self):
+        self.up.update()
+        self.down.update()
+        self.left.update()
+        self.right.update()   
+         
     def draw(self):
         if self.updateScreen:
             print ("coords: {} {}".format(self.x, self.y) )
