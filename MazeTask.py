@@ -93,6 +93,7 @@ class MazeTask:
             
     def draw(self):
         if self.updateScreen:
+            print ("coords: {} {}".format(self.x, self.y) )
             self.updateScreen = False
             with canvas(self.device) as draw:
                 draw.point((self.x, self.y))
