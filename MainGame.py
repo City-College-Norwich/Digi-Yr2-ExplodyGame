@@ -10,16 +10,19 @@ class MainGame:
 
     def update(self):
         completed = 0
-        strikes = 0
-        for task in self.tasks:
-            (completed, strikes) = task.update()
-
-
         
+        for task in self.tasks:
+            task.update()
+            if task.getCompleted():
+                completed += 1
+
+        if completed >= len(self.tasks):
+            self.parent.safe()
+
 
     def draw(self):
         for task in self.tasks:
             task.draw()
     
     def registerStrike(self):
-        self.parent.strikes += 1
+        self.parent.registerStrike()

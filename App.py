@@ -30,6 +30,11 @@ class App:
             self.currentGame.draw()
             self.timer.draw()
 
+    def registerStrike(self):
+        self.strikes += 1
+        if self.strikes >= 3:
+            self.explode()
+
     def startTimer(self):
         self.timer.start()
 
