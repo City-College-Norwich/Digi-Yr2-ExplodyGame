@@ -14,7 +14,7 @@ class Button:
         self.timer.set(0)
 
     def update(self):
-        input = gpio.input(self.pin)
+        input = not gpio.input(self.pin)
         if input != self.pressed:
             if self.timer.check():
                 self.timer.set(50)

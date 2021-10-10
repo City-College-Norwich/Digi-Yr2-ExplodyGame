@@ -72,6 +72,7 @@ class MazeTask:
             if direction == DOWN and self.y < 7:
                 if self.map[self.y+1][self.x] == 1:
                     self.parent.registerStrike()
+                    return
                 elif self.map[self.y+1][self.x] == 2:
                     self.state = PASSED
                 self.y += 1
@@ -80,6 +81,7 @@ class MazeTask:
             if direction == LEFT and self.x > 0:
                 if self.map[self.y][self.x-1] == 1:
                     self.parent.registerStrike()
+                    return
                 elif self.map[self.y][self.x-1] == 2:
                     self.state = PASSED
                 self.x -= 1
@@ -88,6 +90,7 @@ class MazeTask:
             if direction == LEFT and self.x < 7:
                 if self.map[self.y][self.x+1] == 1:
                     self.parent.registerStrike()
+                    return
                 elif self.map[self.y][self.x+1] == 2:
                     self.state = PASSED
                 self.x += 1
@@ -98,13 +101,13 @@ class MazeTask:
         self.down.update()
         self.left.update()
         self.right.update()   
-         
+
     def draw(self):
         if self.updateScreen:
             print ("coords: {} {}".format(self.x, self.y) )
             self.updateScreen = False
             with canvas(self.device) as draw:
-                draw.point((self.x, self.y))
+                draw.point((self.x, self.y), fill="red")
                     
 
     def getKeys(self):
