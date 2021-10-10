@@ -19,7 +19,7 @@ class StartingGame:
 
     def update(self):
         if self.index >= len(self.msgs):
-            self.parent.currentGame = MainGame()
+            self.parent.currentGame = MainGame(self.parent)
             return
 
         if not self.changed:
