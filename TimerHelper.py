@@ -8,12 +8,10 @@ class TimerHelper:
         pass
 
     def set(self, timeInMS):
-        self.start = self.getTime()
-        self.targetTime = timeInMS
+        self.targetTime = self.getTime() + timeInMS
 
     def check(self):
-        delta = time.ticks_diff(self.getTime(), self.start)
-        if delta >= self.targetTime:
+        if self.getTime() > self.targetTime:
             return True
         else:
             return False
