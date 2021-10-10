@@ -31,6 +31,7 @@ class StartingGame:
             if self.timer.check():
                 self.changed = False
         
-            
+    def draw(self):
+        pass
         
 
