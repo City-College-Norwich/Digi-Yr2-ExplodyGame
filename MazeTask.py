@@ -18,6 +18,7 @@ UP = 0
 DOWN = 1
 LEFT = 2
 RIGHT = 3
+NONE = 4
 
 RUNNING = 4
 PASSED = 5
@@ -57,6 +58,8 @@ class MazeTask:
     def update(self):
         if self.state == RUNNING:
             direction = self.getKeys()
+            if direction != NONE:
+                print (direction)
             if direction == UP and self.y > 0:
                 if self.map[self.y-1][self.x] == 1:
                     self.parent.registerStrike()

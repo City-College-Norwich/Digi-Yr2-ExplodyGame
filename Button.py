@@ -19,6 +19,7 @@ class Button:
             if self.timer.check():
                 self.timer.set(50)
             else:
+                print ("setting button {} to {}".format(self.pin, input))
                 self.pressed = input
                 self.checked = False
 
