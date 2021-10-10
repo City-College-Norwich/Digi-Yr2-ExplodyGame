@@ -9,10 +9,10 @@ from luma.core.interface.serial import spi, noop
 from luma.core.render import canvas
 from Button import *
 
-UP_PIN = 25#37
-DOWN_PIN = 23#33
-LEFT_PIN = 6#22
-RIGHT_PIN = 24#35
+UP_PIN = 26#37
+DOWN_PIN = 13#33
+LEFT_PIN = 25#22
+RIGHT_PIN = 19#35
 
 UP = 0
 DOWN = 1
