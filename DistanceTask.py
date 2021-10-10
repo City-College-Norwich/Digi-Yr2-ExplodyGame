@@ -18,7 +18,9 @@ class DistanceTask:
         return True
               
     def setScreen(self, msg):
+        print(msg)
         self.lcd.message(msg)
         
     def setBacklight(self, value):
+        print("setting backlight: {}".format(value))
         self.lcd.set_backlight(value)
