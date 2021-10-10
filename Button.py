@@ -4,12 +4,10 @@ from TimerHelper import *
 class Button:
     def __init__(self, pin):
         self.pin = pin
-        
-        print ("11111111111")
-        print (self.pin)
+
         gpio.setmode(gpio.BOARD)
         gpio.setup(pin, gpio.IN, pull_up_down=gpio.PUD_UP)
-        print ("done")
+
         self.pressed = False
         self.checked = False
         self.timer = TimerHelper()

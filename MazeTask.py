@@ -47,10 +47,10 @@ class MazeTask:
         self.device = max7219(serial, cascaded=1, rotate=0)
         self.updateScreen = True
         
-        self.up = Button(UP)
-        self.down = Button(DOWN)
-        self.left = Button(LEFT)
-        self.right = Button(RIGHT)
+        self.up = Button(UP_PIN)
+        self.down = Button(DOWN_PIN)
+        self.left = Button(LEFT_PIN)
+        self.right = Button(RIGHT_PIN)
 
 
 
