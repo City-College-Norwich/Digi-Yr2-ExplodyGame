@@ -21,4 +21,4 @@ class DistanceTask:
         self.lcd.message(msg)
         
     def setBacklight(self, value):
-        lcd.set_backlight(value)
+        self.lcd.set_backlight(value)
