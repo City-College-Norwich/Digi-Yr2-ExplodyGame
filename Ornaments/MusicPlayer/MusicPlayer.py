@@ -41,7 +41,11 @@ class MusicPlayer:
         self.index += 1
         if self.index >= len(self.songs):
             self.index = 0            
-
+    
+    def sendRequest(self, request):
+        response = requests.get(self.URL + request)
+        
+        
 
 class Player:
     def __init__(self):
